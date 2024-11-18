@@ -1,12 +1,21 @@
-import { View, Text } from 'react-native'
-import React from 'react'
+import { View, Text } from "react-native";
+import React from "react";
+import { Colors } from "@/constants/Colors";
 
 const CalculatorApp = () => {
   return (
     <View>
-      <Text>CalculatorApp</Text>
+      <Text
+        style={{
+          fontSize: 50,
+          fontFamily: "SpaceMono",
+          color: Colors.textPrimary,
+        }}
+      >
+        CalculatorApp
+      </Text>
     </View>
-  )
-}
+  );
+};
 
-export default CalculatorApp
+export default CalculatorApp;
