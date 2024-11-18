@@ -1,19 +1,19 @@
 import { View, Text } from "react-native";
 import React from "react";
 import { Colors } from "@/constants/Colors";
+import { globalStyles } from "@/styles/global-styles";
 
 const CalculatorApp = () => {
   return (
-    <View>
+    <View style={globalStyles.calculatorContainer}>
       <Text
-        style={{
-          fontSize: 50,
-          fontFamily: "SpaceMono",
-          color: Colors.textPrimary,
-        }}
+        style={globalStyles.mainResults}
+        numberOfLines={1}
+        adjustsFontSizeToFit
       >
-        CalculatorApp
+        50*50000000000000000000
       </Text>
+      <Text style={globalStyles.subResult}>250</Text>
     </View>
   );
 };
