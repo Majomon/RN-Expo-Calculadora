@@ -15,14 +15,24 @@ const CalculatorApp = () => {
     clean,
     toggleSign,
     deleteLast,
+    divideOperation,
+    multiplyOperation,
+    subtractOperation,
+    addOperation,
   } = useCalculator();
 
+  
   return (
     <View style={globalStyles.calculatorContainer}>
       {/* Resultados */}
       <View style={{ paddingHorizontal: 30, marginBottom: 20 }}>
         <ThemeText variant="h1">{formula}</ThemeText>
-        <ThemeText variant="h2">250</ThemeText>
+
+        {formula === prevNumber ? (
+          <ThemeText variant="h2"> </ThemeText>
+        ) : (
+          <ThemeText variant="h2">{prevNumber}</ThemeText>
+        )}
       </View>
 
       {/* Fila de botones */}
@@ -48,7 +58,7 @@ const CalculatorApp = () => {
         <CalculatorButtom
           label="%"
           color={Colors.orange}
-          onPress={() => console.log("%")}
+          onPress={divideOperation}
         />
       </View>
 
@@ -59,7 +69,7 @@ const CalculatorApp = () => {
         <CalculatorButtom
           label="*"
           color={Colors.orange}
-          onPress={() => console.log("*")}
+          onPress={multiplyOperation}
         />
       </View>
 
@@ -70,7 +80,7 @@ const CalculatorApp = () => {
         <CalculatorButtom
           label="-"
           color={Colors.orange}
-          onPress={() => console.log("-")}
+          onPress={subtractOperation}
         />
       </View>
 
@@ -81,7 +91,7 @@ const CalculatorApp = () => {
         <CalculatorButtom
           label="+"
           color={Colors.orange}
-          onPress={() => console.log("+")}
+          onPress={addOperation}
         />
       </View>
 
